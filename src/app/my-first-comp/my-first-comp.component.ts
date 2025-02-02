@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./my-first-comp.component.css']
 })
 export class MyFirstCompComponent {
-  name = 'bonjour';
-  email = 'bonjour';
-  message = 'bonjour';
+  name = '';
+  email = '';
+  message = '';
+  isSubmitted =false;
+  messages: Array<any> = [];
+  onSubmit() {
+    console.log(this.name);
+    this.isSubmitted=true;
+    this.messages.push({
+      'name' : this.name,
+      'email' : this.email,
+      'message' : this.message
+      });
+  }
 }
